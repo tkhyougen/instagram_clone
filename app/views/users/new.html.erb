@@ -1,0 +1,33 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> 既に登録されています:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="top_message">
+    <%= image_tag "", size:"100x200" %>
+    <h3>友達の写真や動画をチェックしよう</h3>
+</div>
+
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder:"名前を入力" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, placeholder:"xxx@xxx.com" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password,placeholder:"6文字以上" %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, placeholder:"パスワードを再入力" %>
+
+  <%= f.submit "登録する" %>
+<% end %>
+
+<h3>アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></h3>

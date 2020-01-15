@@ -1,0 +1,23 @@
+<div class = "">
+
+  <% if logged_in? %>
+    <h1><%= @user.name %>のページ</h1>
+  <% else %>
+    <h1>ユーザー：<%= @user.name %>を登録しました。</h1>
+    <h3><%= link_to "ログイン", new_session_path %>してください</h3>
+  <% end %>
+
+  <% if logged_in? %>
+    <p>メールアドレス: <%= @user.email %></p>
+    <p>ユーザー画像: <%= image_tag @user.image.url if @user.image.present? %> </p>
+
+      <%= form_with(model: @user, local: true, url: user_path(@user.id), method: :patch) do |form| %>
+        <%= form.label :写真 %>
+        <%= form.file_field :image %>
+        <%= form.submit %>
+      <% end %>
+
+       <p><%= link_to '投稿一覧へ　未完成', new_user_path %></p>
+
+  <% end %>
+</div>

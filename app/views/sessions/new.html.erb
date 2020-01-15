@@ -1,0 +1,18 @@
+<div class="top_message">
+    <%= image_tag "", size:"200x200" %>
+</div>
+
+<div class="login-container">
+    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br />
+      <br />
+      <%= f.submit "ログイン" %>
+    <% end %>
+</div>
+
+<h3>アカウントをおもちでないですか？</h3>
+<%= link_to"登録する", new_user_path %>
