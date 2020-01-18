@@ -1,0 +1,5 @@
+<% @favorites.each do |favorite| %>
+        <%= link_to feed_path(favorite) do %>
+          <%= image_tag favorite.image.url ,class: "favorite_image" %>
+        <% end %>
+  <% end %>
