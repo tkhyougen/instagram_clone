@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :check_user, only: [:update]
+
+
 
   def new
     @user = User.new
@@ -27,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def favorite_index
-    @user = User.find(params[:id])
+
     @favorites = current_user.favorite_feeds
   end
 
@@ -41,5 +44,14 @@ class UsersController < ApplicationController
     def user_image_params
       params.require(:user).permit(:image, :image_cache)
     end
+
+    def check_user
+      @user = User.find(params[:id])
+      unless current_user.id == @user.id
+        flash[:notice] = "編集権限がありません"
+        redirect_to blogs_path
+      end
+    end
+    
 
 end

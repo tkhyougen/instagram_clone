@@ -14,7 +14,7 @@
         <p><%= feed.updated_at %>に投稿</p>
         <td><%= link_to '詳細', feed %></td>
         <td><%= link_to '編集', edit_feed_path(feed) %></td>
-        <td><%= link_to '削除', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <br><br>
         <span>---------------------------------------------------------</span>
     <% end %>

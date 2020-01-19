@@ -1,0 +1,8 @@
+<h1>投稿が完了しました</h1>
+
+<h4> 投稿者: <%=@feed.user.name %></h4>
+
+<h4>投稿の確認</h4>
+
+<p> 画像: <%= image_tag(@feed.image.thumb.url) if @feed.image && @feed.image.url %></p>
+<p> メッセージ: <%=@feed.message %></p>
