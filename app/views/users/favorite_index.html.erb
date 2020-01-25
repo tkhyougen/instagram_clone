@@ -2,9 +2,9 @@
 <% @favorites.each do |favorite| %>
     <div class ="favorite_index">
         <%= link_to feed_path(favorite) do %>
-        <%= image_tag (favorite.image.url),class: "favorite_image" %>
+        <%= image_tag (favorite.image.url),class:"favorite_image" %>
         <%= favorite.message %>
-        <p> <%= favorite.user.name %>が<%= favorite.updated_at %>に投稿 </p>
+        <%= favorite.user.name %>が<%= favorite.updated_at %>に投稿 %>
         <% end %>
     </div>
 

@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_user, only: [:update]
 
-
-
   def new
     @user = User.new
   end
@@ -30,7 +28,6 @@ class UsersController < ApplicationController
   end
 
   def favorite_index
-
     @favorites = current_user.favorite_feeds
   end
 
@@ -52,6 +49,6 @@ class UsersController < ApplicationController
         redirect_to blogs_path
       end
     end
-    
+
 
 end

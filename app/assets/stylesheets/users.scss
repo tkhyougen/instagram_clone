@@ -1,3 +1,107 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 以下container   */
+
+.container_users{
+  width:100%;
+  margin-top:100px;
+  margin-left: 200px;
+}
+
+.top_message_left{
+  text-align:left;
+  height:500px;
+  float:left;
+  width:200px;
+  display:inline-block;
+
+}
+
+
+.a{
+  width:200px;
+}
+
+.b{
+  width:200px;
+}
+
+
+.top_message_right {
+  text-align:left;
+  height:500px;
+  float:left;
+  width:30%;
+  display:inline-block;
+  margin-left:15px;
+}
+
+.top_message_right_upper{
+  padding:5px 10px;
+  border:solid 1px gray;
+}
+.top_message {
+  text-align:center;
+}
+
+.registration_form {
+  text-align:center;
+}
+
+.log_in{
+  margin-top:10px;
+  border:solid 1px gray;
+  padding:5px 10px;
+  text-align:center;
+  font-size:14px;
+}
+
+
+.container_user_profile{
+  width:100%;
+  margin-top:100px;
+  margin-left: 200px;
+  margin:auto;
+}
+
+
+.user_profile{
+    border:solid 1px gray;
+    width:400px;
+    margin:auto;
+    text-align: center;
+    height:460px;
+}
+
+
+.user_profile_upper{
+  text-align:center;
+  width:50%;
+  margin:auto;
+  margin-bottom:20px;
+}
+
+.user_profile_lower{
+  padding:5px 10px;
+  height:400px;
+  text-align:center;
+}
+
+.user_profile_image{
+  margin-top:40px;
+  margin-bottom:30px;
+}
+
+.user_profile_lower p{
+  font-size:20px;
+}
+.user_profile_lower a{
+  font-size:20px;
+}
+
+.user_profile_menu{
+  padding-bottom:10px;
+}
+.user_profile_menu p{
+    font-size:20px;
+    text-decoration: underline;
+}

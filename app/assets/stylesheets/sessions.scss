@@ -1,3 +1,39 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container_sessions{
+  margin:0 auto;
+  text-align:center;
+  height:500px;
+  background-color: red;
+  width:500px;
+  padding-top: 20px;
+}
+
+.top_message_right1{
+  text-align:center;
+  width:300px;
+  height:400px;
+  margin:auto;
+}
+
+.top_message_right_upper1{
+  border:solid 1px gray;
+  width:300px;
+  height:350px;
+  text-align:center;
+  padding-top:10px;
+}
+
+.top_message {
+  text-align:center;
+}
+.registration_form {
+  text-align:center;
+}
+
+.signup{
+  margin-top:10px;
+  border:solid 1px gray;
+  padding:5px 10px;
+  text-align:center;
+  font-size:14px;
+  width:300px;
+}

@@ -10,17 +10,36 @@
 
   <body>
 
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+    <nav class="navbar navbar-default sticky-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <a class="navbar-brand" href="#">Instagram-clone</a>
+        <div id="gnavi" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <% if logged_in? %>
+            <li><%= link_to "Profile", user_path(current_user.id) %></li>
+            <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+            <li><%= link_to 'feed index', feeds_path %></li>
+            <li><%= link_to "favorite_index", favorite_index_users_path(current_user.id) %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+          <% else %>
+            <%= link_to "Sign up", new_user_path %>
+            <%= link_to "Login", new_session_path %>
+          <% end %>
 
-    <div class = "container">
+
+    <container>
       <%= yield %>
-    </div>
+    </container>
 
     <footer>
       <div class="footer-logo">
