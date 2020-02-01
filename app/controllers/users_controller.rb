@@ -31,11 +31,15 @@ class UsersController < ApplicationController
     @favorites = current_user.favorite_feeds
   end
 
+  def index
+    @user = User.find(params[:id])
+  end
+
  ################################
     private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,:password_confirmation)
+      params.require(:user).permit(:name, :email, :password,:password_confirmation,:image)
     end
 
     def user_image_params
@@ -49,6 +53,5 @@ class UsersController < ApplicationController
         redirect_to blogs_path
       end
     end
-
 
 end

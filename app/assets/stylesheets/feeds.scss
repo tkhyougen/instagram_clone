@@ -1,1 +1,124 @@
 
+html{
+  overflow:auto;
+}
+
+body {
+  color: #1c1e21;
+  margin:0;
+  width:100%;
+  text-align:center;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.wrapper{
+  height:auto !important; height: 100%; min-height: 100%;
+  position:relative;
+  padding-bottom:60px;
+}
+
+header{
+  // height: 64px;
+  position: fixed;
+  z-index: 1;
+  width:100%;
+  top:0;
+}
+
+.navbar-nav{
+  float: right;
+  padding-right: 30px;
+}
+
+.navbar_name{
+  padding-top:16px;
+  text-decoration:underline;
+}
+
+  /* 以下container   */
+
+.post_index{
+  padding-top:40px;
+  margin-bottom: 10px;
+}
+
+.post{
+  border:solid 1px gray;
+  width:30%;
+  margin:auto;
+  padding-top:10px;
+}
+
+.feeds_container{
+  margin-top:40px;
+}
+
+.favorite_button p{
+  color:white;
+}
+
+.field{
+  margin:0 auto;
+}
+
+.field p{
+  font-size:16px;
+}
+
+#error_explanation{
+  margin: 0 auto;
+}
+
+// 以下footer
+
+footer{
+  width:100%;
+  margin-top:30px;
+  background-color:gray;
+  clear:both;
+  bottom:0;
+  position: fixed;
+  z-index:1;
+  height:40px;
+  color:white;
+}
+
+.footer-logo p {
+  float: left;
+  font-size: 15px;
+  padding-left:20px;
+}
+
+.footer-myname {
+  float: right;
+  padding-right: 80px;
+}
+
+.footer-myname p {
+  float:left;
+  font-size: 15px;
+}
+
+.favorite_index{
+  display:inline-block;
+  padding-top:5px;
+  margin:0 auto ;
+  border:solid;
+  border-color:black;
+  padding-bottom:60px;
+}
+
+// **********************
+#alert{
+  font-size:15px;
+  color:black;
+  background-color: yellow;
+}
+
+.danger{
+  font-size:15px;
+  color:black;
+  background-color: red;
+}

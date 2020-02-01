@@ -12,7 +12,6 @@
 <!------------------------------------------ -->
 
 <div class="container_users">
-
   <div class="top_message_left">
     <div class="a">
           <div class="b"> <%= image_tag "Instagramトップ.jpg", size:"200x300" %> </div>
@@ -21,16 +20,12 @@
     </div>
   </div>
 
-
   <div class="top_message_right">
-
     <div class="top_message_right_upper">
       <div class="top_message">
           <h2> Instagram Clone</h2>
           <h4>登録して友達の写真や動画をチェックしよう</h4>
       </div>
-<!-- 
-      <form class="form-horizontal"> -->
       <div class = "registration_form">
         <%= form_with(model: @user, local: true) do |f| %>
           <%= f.label :name,"名前" %>
@@ -41,20 +36,16 @@
           <%= f.password_field :password,placeholder:"6文字以上" %>
           <%= f.label :password_confirmation, "パスワード再入力" %>
           <%= f.password_field :password_confirmation, placeholder:"6文字以上" %>
+          <%= f.label :ユーザー画像　%>
+          <%= f.file_field :image %>
           <br />
           <%= f.submit "登録する" %>
         <% end %>
       </div>
-      <!-- </form> -->
     </div>
-
     <div class ="log_in">
       <p>アカウントをお持ちですか？</p>
       <p><%= link_to "ログインする", new_session_path %></p>
     </div>
-
   </div>
-
-
-
 </div>

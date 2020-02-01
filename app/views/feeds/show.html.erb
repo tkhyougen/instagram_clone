@@ -1,19 +1,19 @@
 <div class="feeds_container">
   <p id="notice"><%= notice %></p>
     <strong>写真:</strong>
-  <p>
-    <%= image_tag @feed.image.thumb.url if @feed.image.present? %>
-  </p>
+  <p><%= image_tag @feed.image.thumb.url if @feed.image.present? %></p>
   <p><%= @feed.message %> </p>
-  <%= link_to '編集する', edit_feed_path(@feed) %> 
-  <%= link_to '投稿一覧に戻る', feeds_path %>
+  <%= link_to '編集する', edit_feed_path(@feed), class:"btn btn-info" %>
+  <%= link_to '投稿一覧に戻る', feeds_path, class:"btn btn-link" %>
 
+  <div favorite_button>
   <% unless @feed.user_id == current_user.id %>
     <% if @favorite.present? %>
       <%= link_to "お気に入り解除する", favorite_path(id: @favorite.id), method: :delete, class: "btn btn-danger" %>
     <% else %>
-      <%= link_to "お気に入りする",favorites_path(feed_id: @feed.id), method: :post, class:"btn btn-primary" %>
+      <%= link_to "お気に入りする",favorites_path(feed_id: @feed.id), method: :post, class:"btn btn-success" %>
     <% end %>
   <% end %>
+  </div>
 
 </div>

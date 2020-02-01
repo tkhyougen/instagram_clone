@@ -14,3 +14,8 @@ $(function() {
         autoplaySpeed: 1000,
     });
 });
+
+
+$(function(){
+  $("#alert").fadeOut(3000);
+});

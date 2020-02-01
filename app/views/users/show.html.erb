@@ -1,11 +1,12 @@
 <div class = "container_user_profile">
-
   <div class="user_profile_upper">
     <% if logged_in? %>
       <h1><%= @user.name %>のページ</h1>
     <% else %>
+    <div class="user_profile_lower">
       <h1>ユーザー：<%= @user.name %>を登録しました。</h1>
       <h2><%= link_to "ログイン", new_session_path %>してください</h2>
+    </div>
     <% end %>
   </div>
 
@@ -13,7 +14,6 @@
     <div class="user_profile_lower">
       <% if logged_in? %>
         <p>メールアドレス: <%= @user.email %></p>
-
           <%= form_with(model: @user, local: true, url: user_path(@user.id), method: :patch) do |form| %>
             <a><%= form.label :ユーザー画像　%></a>
             <%= form.file_field :image %>
@@ -23,15 +23,10 @@
          <%= image_tag @user.image.thumb.url if @user.image.present? %>
         </div>
     </div>
-
     <div class="user_profile_menu">
          <p><%= link_to '投稿一覧へ', feeds_path %></p>
          <p><%= link_to "お気に入り一覧", favorite_index_users_path(@user.id) %></p>
     </div>
-
   </div>
       <% end %>
-
-
-
 </div>
