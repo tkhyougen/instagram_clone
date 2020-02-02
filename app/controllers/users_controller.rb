@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -16,11 +20,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_image_params)
-      redirect_to user_path(@user.id)
-    else
-      render "show"
-    end
+      if @user.update(user_params)
+        redirect_to user_path(@user.id)
+      else
+        render "show"
+      end
   end
 
   def show
@@ -42,9 +46,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,:password_confirmation,:image)
     end
 
-    def user_image_params
-      params.require(:user).permit(:image, :image_cache)
-    end
+    # def user_update_params
+    #   params.require(:user).permit(:name, :email, :image, :image_cache)
+    # end
 
     def check_user
       @user = User.find(params[:id])

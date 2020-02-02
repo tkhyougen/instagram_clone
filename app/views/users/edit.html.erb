@@ -1,0 +1,34 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> エラー:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class = "container_user_profile">
+    <div class="user_profile">
+      <div class="user_profile_lower">
+        <p>ユーザー情報編集 </p>
+        <%= form_with(model: @user, local: true) do |f| %>
+          <%= f.label :name,"名前" %>
+          <%= f.text_field :name, placeholder:"姓名" %>
+          <%= f.label :email,"Emailアドレス"%>
+          <%= f.email_field :email, placeholder:"xxx@xxx.com" %>
+          <%= f.label :password, "パスワードを設定" %>
+          <%= f.password_field :password,placeholder:"6文字以上" %>
+          <%= f.label :password_confirmation, "パスワード再入力" %>
+          <%= f.password_field :password_confirmation, placeholder:"6文字以上" %>
+          <%= f.label :ユーザー画像　%>
+          <%= f.file_field :image %>
+          <br />
+          <%= f.submit "編集する" %>
+        <% end %>
+        <br/>
+        <p><%= link_to "戻る", user_path(current_user.id) %></p>
+      </div>
+    </div>
+</div>
