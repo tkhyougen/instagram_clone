@@ -5,7 +5,7 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
   config.action_dispatch.show_exceptions = false
   config.action_controller.allow_forgery_protection = false
