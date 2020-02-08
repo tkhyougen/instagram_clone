@@ -32,7 +32,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: '投稿されました.' }
+        format.html { redirect_to @feed, notice: '投稿されました' }
         format.json { render :show, status: :created, location: @feed }
         FeedMailer.feed_mail(@feed).deliver
       else

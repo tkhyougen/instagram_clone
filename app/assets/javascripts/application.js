@@ -7,15 +7,19 @@
 //= require_tree .
 
 
-$(function() {
-    $('.a').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 1000,
-    });
-});
+// $(function() {
+//     $('.a').slick({
+//         dots: true,
+//         autoplay: true,
+//         autoplaySpeed: 1000,
+//     });
+// });
 
 
-$(function(){
-  $("#alert").fadeOut(3000);
+// $(function(){
+//   $("#alert").fadeOut(3000);
+// });
+
+$( document ).ready(function() {
+  $('#notice').fadeOut(1000);
 });
